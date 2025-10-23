@@ -29,7 +29,6 @@ ollama run phi3:mini --verbose
 CPU Performance Tips
 For optimal CPU performance, look for processors with high clock speeds and multiple cores (8+), such as Intel Core i9 or AMD Ryzen 9, and aim for at least 16GB RAM Arsturn
 ## Key optimizations:
-
 Use 4-bit quantization (q4_0) which reduces memory usage and speeds up performance Arsturn
 Set CPU thread count: export OLLAMA_NUM_THREADS=8
 Use smaller context windows: --context-size 2048
@@ -38,3 +37,63 @@ Always choose quantized models (q4_0, q4_1) for CPU
 ## Hardware Requirements
 For 7B models with 4-bit quantization, you need 4-6GB RAM for decent development performance Collabnix
 The key for CPU usage is choosing smaller, quantized models. While they won't match GPU speeds, these optimized models provide usable performance on CPU-only systems.
+
+# Popular Uncensored Models (2025)
+### Latest options:
+```
+bash# Dolphin series (popular uncensored variants)
+ollama pull dolphin-mistral:7b
+ollama pull dolphin-llama3:8b
+```
+
+# Wizard Vicuna (uncensored)
+```
+ollama pull wizard-vicuna-uncensored:7b
+ollama pull wizard-vicuna-uncensored:13b
+```
+
+# Nous Hermes (less filtered)
+ollama pull nous-hermes2:10.7b-solar-q4_K_M
+
+# Orca2 (minimal filtering)
+ollama pull orca2:7b
+
+### For CPU efficiency, I'd recommend:
+bashollama pull dolphin-mistral:7b
+This is based on Mistral 7B (which you wanted) but with reduced safety filtering.
+
+### Important Notes
+"Uncensored" means reduced content filtering - these models will respond to more requests but may generate inappropriate, biased, or harmful content
+They're primarily used for creative writing, roleplay, research, or scenarios where standard models are overly restrictive
+You're responsible for how you use these models
+Performance is similar to their base models
+
+# Best Models for Technical/Engineering Work
+## Top Recommendations:
+bash# DeepSeek Coder (excellent for technical/engineering)
+ollama pull deepseek-coder:6.7b
+
+# Mistral (strong technical knowledge)
+ollama pull mistral:7b
+
+# Llama 3.1 (great general technical capability)
+ollama pull llama3.1:8b
+
+# CodeLlama (good for technical processes)
+ollama pull codellama:7b
+
+# Mixtral (more advanced, needs more RAM)
+```
+ollama pull mixtral:8x7b
+For CPU-optimized performance, I recommend:
+bashollama pull mistral:7b
+```
+# or
+ollama pull deepseek-coder:6.7b
+
+Why These Are Better for Your Needs
+### These models are:
+Not restricted on technical/engineering content
+Better trained on scientific and manufacturing knowledge
+More accurate for technical R&D questions
+Standard models handle technical topics just fine - they only restrict harmful content, not engineering knowledge
